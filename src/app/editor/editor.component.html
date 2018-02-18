@@ -1,0 +1,40 @@
+<div id="editor">
+    <div class="col-sm-6" id="questionPart">
+      <h1>{{question.name}}</h1>
+      <p>{{question.question}}</p>
+    </div>
+    <div class="editorPart">
+    <div class="col-sm-6" id="editor">
+      <textarea rows="30" cols="86" id="code" placeholder="Enter your code here" [(ngModel)]="code" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">
+      </textarea>
+
+      <div style="margin-top:2%;">
+        <label for="language">language</label>
+        <select name="lang" id="lang" [(ngModel)]="lang">
+          <option value="1">PYTHON</option>
+          <option value="2">JAVA</option>
+          <option value="3">C</option>
+        </select>
+        <input type="submit" value="Run Sample Test Case" (click)="compile()" class="btn btn-primary">
+        <input type="submit" value="Run All Test Cases" class="btn btn-danger" (click)="run()">
+        <button (click)="download()" class="btn btn-warning">Download Code</button>
+        <input type="submit" name="submitScore" value="submit" (click)="submitScore()" class="btn btn-success">
+      </div>
+    </div>
+  </div>
+  <div  id="output" *ngIf="showOutput">
+    <h1 *ngIf="sampleResult" style="color:green">Output: Sample Test Cases Passed</h1>
+    <h1 *ngIf="outputResult" style="color:green">Output : CORRECT RESULT</h1>
+    <h1 *ngIf="!outputResult" style="color:red">Output : INCORRECT RESULT</h1>
+    <h1 *ngIf="showScore" style="color:violet">Score : {{score}}/5</h1>
+    <h2 *ngIf="!outputResult" style="color:red">
+      <h1>Your Output: </h1>{{err}}</h2>
+  </div>
+</div>
+
+<!-- <div id="header"></div>
+<div id="container">
+    <div id="first"></div>
+    <div id="second"></div>
+    <div id="clear"></div>
+</div> -->

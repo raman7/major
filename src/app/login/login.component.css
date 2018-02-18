@@ -1,0 +1,19 @@
+.div{
+    
+    padding-left: 30%;
+    background-color: #f1f1ff;
+   }
+   
+   #loginForm{
+       margin-top: 3%;
+       box-shadow: 1px 1px 1px 2px;
+   }
+
+   input{
+       width:150%;
+   }
+
+   button{
+       margin:2%;  
+    width: 150%;
+    }

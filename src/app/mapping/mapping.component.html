@@ -1,0 +1,68 @@
+<h1>Faculty Mapping</h1>
+<br>
+<div class="jumbotron">
+<div class="form-group">
+    <label class="control-label col-sm-2" for="year">Faculty</label>
+      <select [(ngModel)]="name">
+        <option> </option>
+        <option *ngFor="let f of faculty">{{f.username}}</option>
+      </select>
+</div>
+<div class="form-group">
+    <label class="control-label col-sm-2" for="year">Year</label>
+        <select  [(ngModel)]="year">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+</div>
+<div>
+    <label class="control-label col-sm-2" for="year" >Section</label>
+          <select  [(ngModel)]="section">
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+              <option value="D">D</option>
+          </select>
+  </div>
+   <br>
+   <br>
+  &nbsp;<button class="btn btn-default" (click)="mapFaculty()">Map Faculty</button>
+
+</div>
+ 
+
+<h1>Faculty Mapping Details</h1>
+<!-- <div class="jumbotron">
+<ul *ngFor="let f of faculty ;let index=index">
+    <li>{{f.username}}</li>
+    <ul *ngFor="let f of map_object[index] ">
+            <li>{{f.year}}&nbsp;&nbsp;{{f.section}}</li>
+    </ul>
+</ul>
+</div> -->
+
+<div class="jumbotron">
+        
+        <div class="table-responsive">          
+        <table class="table table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <th>Faculty Name</th>
+              <th>Year & Section</th>
+             
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let f of faculty ;let index=index">
+              
+              <td>{{f.username}}</td>
+              <td *ngFor="let i of map_object[index] ">{{i.year}} - {{i.section}}&nbsp;&nbsp;<button class="btn btn-danger" (click)="removeFaculty(f.username,i.year,i.section)">Remove</button><br></td>
+              
+            </tr>
+          </tbody>
+        </table>
+        </div> </div>
+  
+

@@ -1,0 +1,39 @@
+<div>
+  <nav class="nav">
+
+ 
+
+  </nav>
+
+
+  <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> 
+          </button>
+          <a class="navbar-brand" href="#">Code Arena</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+              <li><a *ngIf="!isLoggedIn"  routerLink="/adminLogin">Admin Login</a></li>
+            <li><a *ngIf="!isLoggedIn"  routerLink="/login">Student Login</a></li>
+            <li><a *ngIf="!isLoggedIn"  routerLink="/facultyLogin">Faculty Login</a></li>
+              <li><a *ngIf="!isLoggedIn"  routerLink="/registerUser">Register Student</a></li>
+              <li><a *ngIf="isLoggedIn" >Welcome {{user}}</a></li>
+              <li><a *ngIf="isLoggedIn"  (click)="logout()">Log out</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+
+  <div id="container">
+    <router-outlet></router-outlet>
+  </div>
+  <!-- <app-copyrights></app-copyrights> -->
+</div>

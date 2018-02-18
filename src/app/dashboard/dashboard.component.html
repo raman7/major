@@ -1,0 +1,52 @@
+
+<div id="total">
+<div class="row">
+  <form [formGroup]="form">
+  <div class="col-sm-3" id="left">
+   
+    <h2>Select Week : </h2>
+    <select name="selectedWeek" formControlName="week" placeholder="week" (change)="onChangeWeek()">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+    </select>
+   
+   <div id="button">
+    <input type="submit" name="getQuestions" class="btn btn-warning" (click)="showQuestionForWeek()" >
+   </div>
+  
+  </div>
+  </form>
+  
+  <div class="col-sm-6" id="right">
+    <div class="list-group">
+    <ul  *ngIf="showQuestions">
+      <li style="margin:2%;" *ngFor="let question of displayQuestions"  class="list-group-item active">
+        <div *ngIf="!question.isAttempted">
+          <h3>{{question.name}}</h3>
+          <h5>Posted By : {{question.postedBy}}</h5>
+          <input type="submit" class="btn btn-danger" (click)="sendQuestion(question)" value="Solve" style="margin-left:2%;">
+        </div>
+      </li> 
+       
+        
+    </ul>
+    <h3 *ngIf="noQuestions" style="border:2px solid black">No Questions to Show. Please contact your faculty </h3>
+    </div>
+
+  </div>
+</div>
+</div>
+

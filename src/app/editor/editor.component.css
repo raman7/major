@@ -1,0 +1,29 @@
+
+#output{
+    margin: 2%;
+    padding: 2%;
+   
+} 
+
+input{
+    width:30%;
+}
+
+textarea{
+    resize: none;
+}
+
+#questionPart {
+
+    border: 1px solid black;
+    margin: 2%;
+    box-shadow: 2px 1px 1px;
+    width: 40%;
+    float: left;
+    height: 100%;
+}
+#editorPart {
+    width: 60%;
+    float: left;
+    height: 100%;
+}
